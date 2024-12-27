@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import com.jek.rooted.R
+import com.jek.rooted.dao.ProdutoDao
 import com.jek.rooted.model.Produto
 import java.math.BigDecimal
 
@@ -37,7 +38,9 @@ class FormProdutoActivity : AppCompatActivity(R.layout.activity_form_produto){
                 valor
             )
 
-            Log.i("FormProduto", "onCreate : $produto")
+            val dao = ProdutoDao()
+            dao.adiciona(produto)
+            finish()
         }
     }
 }
